@@ -465,9 +465,8 @@ export default {
         return 0;
       } else if (this.rtl) {
         return (this.offset - this.dragOffset) * 1;
-      } 
-        return (this.offset + this.dragOffset) * -1;
-       }
+      }
+      return (this.offset + this.dragOffset) * -1;
     },
     isHidden() {
       return this.carouselWidth <= 0;
@@ -839,10 +838,10 @@ export default {
           this.dragOffset = -Math.sqrt(-this.resistanceCoef * this.dragOffset);
         }
       } else if (nextOffset < 0) {
-          this.dragOffset = -Math.sqrt(-this.resistanceCoef * this.dragOffset);
-        } else if (nextOffset > this.maxOffset) {
-          this.dragOffset = Math.sqrt(this.resistanceCoef * this.dragOffset);
-        }
+        this.dragOffset = -Math.sqrt(-this.resistanceCoef * this.dragOffset);
+      } else if (nextOffset > this.maxOffset) {
+        this.dragOffset = Math.sqrt(this.resistanceCoef * this.dragOffset);
+      }
     },
     onResize() {
       this.computeCarouselWidth();

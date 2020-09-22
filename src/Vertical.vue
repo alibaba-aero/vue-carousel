@@ -52,9 +52,9 @@ export default {
       ].firstElementChild.offsetHeight;
     },
     goToIndex(index) {
-      this.$refs["VueCarouselContainer"].scrollTop = this.$refs[
-        "VueCarouselContainer"
-      ].firstElementChild.offsetHeight * index;
+      this.$refs["VueCarouselContainer"].scrollTop =
+        this.$refs["VueCarouselContainer"].firstElementChild.offsetHeight *
+        index;
     }
   },
   watch: {
